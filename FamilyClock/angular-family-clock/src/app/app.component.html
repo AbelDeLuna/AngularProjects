@@ -1,0 +1,27 @@
+<div *ngIf="!selectedPerson">
+  <div class="dashboard">
+    <span class="dashboardBox">
+      <strong>Combined Years Remaining:</strong> {{combinedYears}}yrs 
+    </span>
+    <span class="dashboardBox">
+      <strong>Longest Lifespan Remaining: </strong>{{longestToLive}} ({{longestYears}}yrs)
+    </span>
+  </div>
+  <h1>People:</h1>
+  <ul class="peopleBoxes">
+    <li *ngFor="let people of family" 
+      class="test"
+      (click)="onSelect(people)">
+      Name: {{people.name}}
+      <ul>
+        <li>Age: {{CalculateAge(people)}}</li>
+        <li>DOB: {{people.dob}}</li>
+        <li>Sex: {{people.sex | titlecase}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<button *ngIf="selectedPerson" (click)="unSelect()">Back</button>
+
+<family-detail [people]="selectedPerson"></family-detail>

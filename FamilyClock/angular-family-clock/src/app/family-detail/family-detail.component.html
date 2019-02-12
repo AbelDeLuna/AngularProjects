@@ -1,0 +1,7 @@
+<div *ngIf="people">
+  <h1 class="{{people.sex}}">{{people.name | uppercase}}</h1>
+  <div><strong>My Name: </strong>{{people.name}}</div>
+  <div><strong>My Birthday: </strong>{{people.dob}}</div>
+  <div><strong>My Deathday: </strong>{{DateToString(CalculateDateOfDeath(people))}}</div>
+  <div><strong >My Time Remaining: </strong>{{TimeRemaining(people)}}</div>
+</div>

@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.male{
+  background: lightblue;
+}
+
+.female{
+  background: plum;
+}
+
+div{
+  text-align: center;
+}
